@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich | Mein Portfolio</title>
+    <style>
+        /* Basis-Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Pulsierendes Banner für die Praktikumssuche */
+        .banner {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: pulseBanner 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseBanner {
+            0% { background-color: #2563eb; }
+            50% { background-color: #1d4ed8; }
+            100% { background-color: #2563eb; }
+        }
+
+        .banner a {
+            color: #fef08a;
+            text-decoration: underline;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .banner a:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hauptcontainer */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Sektionen */
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h1, h2 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Interaktive Projekt-Karten */
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        /* Sanftes Abheben der Projektkarten beim Drüberfahren */
+        .project-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+            border-color: #2563eb;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2563eb;
+        }
+
+        /* ANIMIERTER BUTTON */
+        .btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            
+            /* Definiert die sanfte Animation für alle CSS-Änderungen */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover-Effekt: Button hebt sich, wird dunkler und wirft mehr Schatten */
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Klick-Effekt (Active): Button drückt sich kurz ein */
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Praktikums-Banner mit Farbwechsel -->
+    <div class="banner">
+        🚀 Ich suche aktuell nach einem Praktikum! <a href="#kontakt">Jetzt kontaktieren</a>
+    </div>
+
+    <div class="container">
+        
+        <!-- Über mich -->
+        <section id="ueber-mich">
+            <h1>Hallo, ich bin [Dein Name] 👋</h1>
+            <p>Willkommen auf meiner Website. Ich bin [Dein Beruf/Deine Rolle] und begeistere mich für [Deine Interessen].</p>
+            <p>Hier teile ich meine Reise, meine Projekte und halte Ausschau nach neuen beruflichen Herausforderungen.</p>
+        </section>
+
+        <!-- Projekte (Jetzt als interaktive Karten) -->
+        <section id="projekte">
+            <h2>Meine Projekte</h2>
+            <p>Bewege die Maus über die Projekte, um sie anzusehen:</p>
+            
+            <ul class="project-list">
+                <li class="project-item">
+                    <div class="project-title">Projekt Eins</div>
+                    <p>Eine kurze Beschreibung, worum es in dem Projekt ging und welche Technologien du genutzt hast.</p>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Projekt Zwei</div>
+                    <p>Ein weiteres cooles Projekt. Erkläre kurz den Nutzen oder das Problem, das du damit gelöst hast.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Haben Sie ein passendes Praktikum für mich oder möchten sich einfach austauschen? Ich freue mich auf Ihre Nachricht!</p>
+            <p><strong>E-Mail:</strong> deine.email@beispiel.de</p>
+            <!-- Der animierte Button -->
+            <a href="mailto:deine.email@beispiel.de" class="btn">E-Mail schreiben</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 [Dein Name]. Erstellt mit HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
