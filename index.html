@@ -3,187 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über mich | Mein Portfolio</title>
+    <title>Portfolio</title>
+    <!-- Einbindung einer eleganten Serifenschrift für den edlen Look -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Basis-Styling */
+        /* Farbpalette & Variablen (Altrosa & Beige Wohlfühl-Ästhetik) */
+        :root {
+            --bg-color: #fcf9f5;        /* Soft Warm Beige */
+            --card-bg: #ffffff;         /* Pure White für Kontrast */
+            --text-main: #4a3e3d;       /* Muted Dunkelbraun/Grau statt hartem Schwarz */
+            --text-muted: #8c7a78;      /* Sanftes Taupe-Grau */
+            --accent-rose: #d4a396;     /* Klassisches Altrosa */
+            --accent-rose-dark: #b8877b;/* Dunkleres Altrosa für Interaktionen */
+            --accent-beige: #f3ece3;    /* Dunkleres Beige für Struktur */
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
         }
 
-        /* Pulsierendes Banner für die Praktikumssuche */
+        /* Praktikums-Banner (Pulsierend und elegant) */
         .banner {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, var(--accent-rose), #e5b3a7);
             color: white;
             text-align: center;
-            padding: 15px 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            animation: pulseBanner 3s infinite ease-in-out;
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(212, 163, 150, 0.2);
+            animation: elegantPulse 4s infinite ease-in-out;
         }
 
-        @keyframes pulseBanner {
-            0% { background-color: #2563eb; }
-            50% { background-color: #1d4ed8; }
-            100% { background-color: #2563eb; }
+        @keyframes elegantPulse {
+            0% { opacity: 0.95; transform: scale(1); }
+            50% { opacity: 1; }
+            100% { opacity: 0.95; transform: scale(1); }
         }
 
         .banner a {
-            color: #fef08a;
-            text-decoration: underline;
-            display: inline-block;
-            transition: transform 0.2s ease;
+            color: var(--bg-color);
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--bg-color);
+            margin-left: 5px;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            font-weight: 700;
         }
 
         .banner a:hover {
-            transform: scale(1.05);
+            color: white;
+            border-color: white;
+            letter-spacing: 0.8px;
         }
 
-        /* Hauptcontainer */
+        /* Layout & Container */
         .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 0 25px;
         }
 
-        /* Sektionen */
+        /* Stilvolle Sektionen */
         section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(243, 236, 227, 0.6);
+            box-shadow: 0 10px 30px rgba(140, 122, 120, 0.03);
+            transition: transform 0.4s ease;
         }
 
+        /* Typografie */
         h1, h2 {
-            color: #1e3a8a;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+            font-weight: 600;
             margin-top: 0;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
-        /* Interaktive Projekt-Karten */
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Subtile Design-Linie unter Überschriften */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background-color: var(--accent-rose);
+            border-radius: 2px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        /* Stylishe Projekt-Karten */
         .project-list {
             list-style: none;
             padding: 0;
+            margin: 25px 0 0 0;
         }
 
         .project-item {
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid #e5e7eb;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Sanftes Abheben der Projektkarten beim Drüberfahren */
+        /* Interaktion: Sanftes Hereinzoomen und farbiger Rand */
         .project-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-            border-color: #2563eb;
+            transform: translateY(-4px) scale(1.01);
+            background-color: #ffffff;
+            border-color: var(--accent-rose);
+            box-shadow: 0 15px 35px rgba(214, 163, 150, 0.12);
         }
 
         .project-title {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #2563eb;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
         }
 
         /* ANIMIERTER BUTTON */
         .btn {
             display: inline-block;
-            background-color: #2563eb;
+            background-color: var(--accent-rose);
             color: white;
-            padding: 12px 24px;
+            padding: 14px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 10px;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            border-radius: 50px; /* Komplett rund für den modernen Chic-Look */
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(214, 163, 150, 0.3);
             
-            /* Definiert die sanfte Animation für alle CSS-Änderungen */
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* Flüssige Animationen */
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
-            overflow: hidden;
+            z-index: 1;
         }
 
-        /* Hover-Effekt: Button hebt sich, wird dunkler und wirft mehr Schatten */
+        /* Hover-Effekt: Button dehnt sich elegant aus und leuchtet soft */
         .btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 7px 14px rgba(37, 99, 235, 0.3);
+            background-color: var(--accent-rose-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(214, 163, 150, 0.45);
+            letter-spacing: 1px; /* Minimales Auseinanderziehen der Schrift */
         }
 
-        /* Klick-Effekt (Active): Button drückt sich kurz ein */
+        /* Klick-Effekt */
         .btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(214, 163, 150, 0.3);
+        }
+
+        /* Details */
+        .contact-info {
+            margin-top: 25px;
+            padding: 15px;
+            border-left: 2px solid var(--accent-rose);
+            background-color: var(--bg-color);
+            border-radius: 0 8px 8px 0;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            color: #6b7280;
-            font-size: 0.9rem;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Praktikums-Banner mit Farbwechsel -->
+    <!-- Stylishes Praktikums-Banner -->
     <div class="banner">
-        🚀 Ich suche aktuell nach einem Praktikum! <a href="#kontakt">Jetzt kontaktieren</a>
+        ✨ Auf der Suche nach einer neuen Herausforderung: Praktikum gesucht! <a href="#kontakt">Details ansehen</a>
     </div>
 
     <div class="container">
         
-        <!-- Über mich -->
+        <!-- Über mich Sektion -->
         <section id="ueber-mich">
-            <h1>Hallo, ich bin [Dein Name] 👋</h1>
-            <p>Willkommen auf meiner Website. Ich bin [Dein Beruf/Deine Rolle] und begeistere mich für [Deine Interessen].</p>
-            <p>Hier teile ich meine Reise, meine Projekte und halte Ausschau nach neuen beruflichen Herausforderungen.</p>
+            <h1>Hallo, ich bin Stephan.</h1>
+            <p>Willkommen in meinem digitalen Raum.</p>
+            <p>Aktuell bin ich auf der Suche nach einem Praktikum, bei dem ich wachsen, lernen und einen echten Mehrwert bieten kann.</p>
         </section>
 
-        <!-- Projekte (Jetzt als interaktive Karten) -->
+        <!-- Projekte Sektion -->
         <section id="projekte">
-            <h2>Meine Projekte</h2>
-            <p>Bewege die Maus über die Projekte, um sie anzusehen:</p>
+            <h2>Ausgewählte Projekte</h2>
+            <p>Ein Einblick in meine bisherige kreative und technische Arbeit:</p>
             
             <ul class="project-list">
                 <li class="project-item">
-                    <div class="project-title">Projekt Eins</div>
-                    <p>Eine kurze Beschreibung, worum es in dem Projekt ging und welche Technologien du genutzt hast.</p>
+                    <div class="project-title">Concept & Design UI</div>
+                    <p>Konzeptionierung einer modernen Web-Oberfläche. Fokus auf intuitive Nutzerführung und minimalistisches, zeitloses Design.</p>
                 </li>
                 <li class="project-item">
-                    <div class="project-title">Projekt Zwei</div>
-                    <p>Ein weiteres cooles Projekt. Erkläre kurz den Nutzen oder das Problem, das du damit gelöst hast.</p>
+                    <div class="project-title">Web-Applikation Prototyp</div>
+                    <p>Entwicklung eines funktionalen Prototyps mit Fokus auf Clean Code und performante, responsive Strukturen.</p>
                 </li>
             </ul>
         </section>
 
-        <!-- Kontakt -->
+        <!-- Kontakt Sektion -->
         <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Haben Sie ein passendes Praktikum für mich oder möchten sich einfach austauschen? Ich freue mich auf Ihre Nachricht!</p>
-            <p><strong>E-Mail:</strong> deine.email@beispiel.de</p>
-            <!-- Der animierte Button -->
-            <a href="mailto:deine.email@beispiel.de" class="btn">E-Mail schreiben</a>
+            <h2>Let's Connect</h2>
+            <p>Suchen Sie Verstärkung für Ihr Team oder möchten Sie mehr über meine Arbeit erfahren? Lassen Sie uns gemeinsam etwas Schönes erschaffen.</p>
+            
+            <div class="contact-info">
+                <strong>Verfügbarkeit:</strong> Ab sofort / nach Absprache<br>
+                <strong>E-Mail:</strong> kerbusk.s@gmail.com
+            </div>
+            
+            <!-- animierte Button -->
+            <a href="mailto:kerbusk.s@gmail.com" class="btn">In Kontakt treten</a>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 [Dein Name]. Erstellt mit HTML & CSS.</p>
+        <p>&copy; 2026 Stephan Kerbusk. Designed with passion.</p>
     </footer>
 
 </body>
